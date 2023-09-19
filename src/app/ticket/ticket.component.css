@@ -1,0 +1,44 @@
+/* Add this CSS code to your styles.css or a custom CSS file */
+
+.container {
+  margin-top: 50px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.success-message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.ticket-details {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,236 @@
+ 
+<section class="vh-20 bg-light">
+  <div class="container h-20">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-lg-10 col-xl-10">
+        <div class="card text-dark" style="border-radius: 10px;">
+          <div class="card-body p-md-3">
+            <div class="row justify-content-center">
+              <div class="col-md-3 col-lg-3 col-xl-5 order-1 order-lg-1">
+                <h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Register</h1>
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                  <div class="mb-4">
+                    <!-- <i class="fas fa-user fa-lg me-3"></i> -->
+                    <div class="form-outline flex-fill">
+                      <input type="text" id="userName" class="form-control" formControlName="userName" required placeholder="Username" />
+                      <label class="form-label" for="userName"></label>
+                      <div *ngIf="f['userName'].touched && f['userName'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['userName'].errors && f['userName'].errors['required']">UserName is required!!</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <!-- <i class="fas fa-envelope fa-lg me-3"></i> -->
+                    <div class="form-outline flex-fill">
+                      <input type="email" id="email" class="form-control" formControlName="email" required placeholder="Email" />
+                      <label class="form-label" for="email"></label>
+                      <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required!!</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <!-- <i class="fas fa-lock fa-lg me-3"></i> -->
+                    <div class="form-outline flex-fill">
+                      <input type="password" id="password" class="form-control" formControlName="password" required placeholder="Password" />
+                      <label class="form-label" for="password"></label>
+                      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+        
+                    <div class="form-outline flex-fill">
+                      <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword" required placeholder="Confirm Password" />
+                      <label class="form-label" for="confirmPassword"></label>
+                      <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']">Confirm Password is required.</div>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <!-- <i class="fas fa-phone fa-lg me-3"></i> -->
+                    <div class="form-outline flex-fill">
+                      <input type="text" id="contact" class="form-control" formControlName="contact" required placeholder="Contact" />
+                      <label class="form-label" for="contact"></label>
+                      <div *ngIf="f['contact'].touched && f['contact'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['contact'].errors && f['contact'].errors['required']">contact is required.</div>
+                    </div>
+                    </div>
+                  </div>
+
+                  
+
+                  <!-- <div class="form-check mb-5">
+                    <input class="form-check-input me-2" type="checkbox" id="agreeToTerms" formControlName="agreeToTerms" required />
+                    <label class="form-check-label" for="agreeToTerms">
+                      I agree to all statements in <a href="#">Terms of service</a>
+                    </label>
+                  </div> -->
+
+                  <div class="d-flex justify-content-center mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                  </div>
+                
+                  <!-- Display a message if the form is invalid and hasValidationErrors flag is set -->
+                  <div *ngIf="form.invalid && hasValidationErrors" class="alert alert-danger text-center">
+                    Please fill the all required fields.
+                  </div>
+                  <div>
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account?<a href="#!"
+                      class="forgot-password" routerLink="/login">Login here</a>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 order-1 order-lg-2 d-flex align-items-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="register-card"><img class="profile-img-card" src="assets/img/login.jpeg"  />
+    <p class="profile-name-card"></p>
+    <form [formGroup]="form" (ngSubmit)="submit()"  class="form-signup"><span class="reauth-email"></span>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="userName" type="text" class="form-control" id="userName" required placeholder="UserName" autofocus />
+                <div *ngIf="f['userName'].touched && f['userName'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['userName'].errors && f['userName'].errors['required']">UserName is required!!</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="email" type="email" class="form-control" id="inputEmail" required placeholder="Email address" autofocus />
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required!!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #PWD formControlName="password" type="password" class="form-control" id="inputPassword" required placeholder="Password" />
+                <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #PWD formControlName="confirmPassword" type="password" class="form-control" id="inputPassword" required placeholder="Confirm Password" />
+                <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']">Confirm Password is required.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="contact" type="text" class="form-control" id="contact" required placeholder="Contact" autofocus />
+                <div *ngIf="f['contact'].touched && f['contact'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['contact'].errors && f['contact'].errors['required']">ContactNumber is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="userType" type="text" class="form-control" id="userType" required placeholder="UserType" autofocus />
+                <div *ngIf="f['userType'].touched && f['userType'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['userType'].errors && f['userType'].errors['required']">UserType is required.</div>
+                </div>
+            </div> 
+        </div>
+        
+        
+       
+        <button class="btn btn-primary btn-block btn-lg btn-signup" type="submit" [disabled]="!form.valid"  >Sign Up</button>
+        </form>
+            <a class="forgot-password" routerLink="/login">Already a User ?</a></div>
+
+
+
+
+
+
+
+            <style>
+               
+
+            </style> -->
+
+
+
+
+           
+
+            <body>
+              <div class="register-card">
+                <img class="profile-img-card" src="assets/img/login.jpeg" alt="Profile Image" />
+                <p class="profile-name-card"></p>
+                <form [formGroup]="form" (ngSubmit)="submit()" class="form-signup">
+                  <span class="reauth-email"></span>
+            
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input #userName formControlName="userName" type="text" class="form-control" id="userName" required placeholder="User Name" minlength="5" />
+                      <div *ngIf="f['userName'].touched && f['userName'].hasError('required')" class="alert alert-danger">User Name is required!!</div>
+                      <div *ngIf="f['userName'].touched && f['userName'].hasError('minlength')" class="alert alert-danger">User Name must be at least 5 characters long.</div>
+                    </div>
+                     <div class="col-md-6 form-group">
+                      <input #email formControlName="email" type="email" class="form-control" id="inputEmail" required placeholder="Email address" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" >
+                      <div *ngIf="f['email'].touched && f['email'].hasError('pattern')" class="alert alert-danger">Invalid email format.!!</div>
+                      <div *ngIf="f['email'].touched && f['email'].hasError('required')" class="alert alert-danger">Email required!!</div>
+                    </div>
+                  </div>
+                 
+            
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input #password formControlName="password" type="password" class="form-control" id="inputPassword" required placeholder="Password" minlength="8" />
+                      <div *ngIf="f['password'].touched && f['password'].hasError('required')" class="alert alert-danger">Password is required.</div>
+                      <div *ngIf="f['password'].touched && f['password'].hasError('minlength')" class="alert alert-danger">Password must be at least 8 characters long.</div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input #confirmPassword formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword" required placeholder="Confirm Password" />
+                      <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].hasError('required')" class="alert alert-danger">Confirm Password is required.</div>
+                      <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].hasError('passwordMismatch')" class="alert alert-danger">Passwords do not match.</div>
+                    </div>
+                  </div>
+            
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input #contact formControlName="contact" type="tel" class="form-control" id="contact" required placeholder="Contact" pattern="[0-9]{10}" />
+                      <div *ngIf="f['contact'].touched && f['contact'].hasError('required')" class="alert alert-danger">Contact Number is required.</div>
+                      <div *ngIf="f['contact'].touched && f['contact'].hasError('pattern')" class="alert alert-danger">Invalid contact number format (10 digits required).</div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input #userType formControlName="userType" type="text" class="form-control" id="userType" required placeholder="User Type" />
+                      <div *ngIf="f['userType'].touched && f['userType'].hasError('required')" class="alert alert-danger">User Type is required.</div>
+                    </div>
+                  </div>
+                  
+                  <button class="btn btn-primary btn-block btn-lg btn-signup" type="submit" [disabled]="!form.valid">Sign Up</button>
+                </form>
+                <a class="forgot-password" routerLink="/login">Already a User?</a>
+              </div>
+            </body>

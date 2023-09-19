@@ -1,0 +1,12 @@
+<!-- map.component.html -->
+<agm-map [latitude]="centerLat" [longitude]="centerLng" [zoom]="6" style="height: 300px;">
+    <!-- Marker for Shirdi -->
+    <agm-marker [latitude]="sourceLat" [longitude]="sourceLng"></agm-marker>
+  
+    <!-- Marker for Anantapur -->
+    <agm-marker [latitude]="destLat" [longitude]="destLng"></agm-marker>
+  
+    <!-- Polyline for the route -->
+    <agm-polyline [editable]="false" [strokeColor]="'#0000FF'" [strokeWeight]="4" [path]="routePath"></agm-polyline>
+  </agm-map>
+  

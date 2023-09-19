@@ -1,0 +1,63 @@
+<header class="bg-surface-primary border-bottom pt-6">
+    <div class="container-fluid">
+        <div class="mb-npx">
+            <div class="row align-items-center">
+                <!-- Navigation Options -->
+                <div class="col-12 text-center">
+                    <ul class="nav nav-tabs mt-4 overflow-x border-0">
+                      <li class="nav-item"><a href="/viewbuses" class="nav-link">View Buses</a></li>
+                      <li class="nav-item"><a href="/profile" class="nav-link">Ratings</a></li>
+                      <li class="nav-item"><a href="/search" class="nav-link">Search and Book</a></li>
+                      <!-- <li class="nav-item"><a href="/profileface" class="nav-link">News Journal</a></li> -->
+                      <li class="nav-item"><a href="/viewfeed" class="nav-link">Feedback</a></li>
+                      <li class="nav-item"><a href="/booking" class="nav-link">Bookings</a></li>
+                      <li class="nav-item"><a href="/login" class="nav-link">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 mt-5 height=100px">
+        <div class="card transaction-form">
+          <div class="card-body">
+            <h2 class="card-title">Enter your Details</h2>
+            <form (ngSubmit)="submitDetails()" #bankForm="ngForm">
+              <div class="form-group">
+                <label for="UserName" class="form-label">UserName:</label>
+                <input type="text" id="UserName" name="UserName" [(ngModel)]="UserName" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="Email" class="form-label">Email:</label>
+                <input type="text" id="Email" name="Email" [(ngModel)]="Email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="Contact" class="form-label">Contact:</label>
+                <input type="text" id="Contact" name="Contact" [(ngModel)]="Contact" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="Image" class="form-label">Image URL:</label>
+                <input type="text" id="Image" name="Image" [(ngModel)]="Image" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="AccountNo" class="form-label">AccountNo:</label>
+                <input type="text" id="AccountNo" name="AccountNo" [(ngModel)]="AccountNo" class="form-control" required>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div class="popup" *ngIf="showSuccessMessage">
+              <div class="popup-content">
+                <h2>Success!</h2>
+                <p>Your refund request has been sent and will be processed in 7 business days.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,99 @@
+
+<header class="bg-surface-primary border-bottom pt-6">
+  <div class="container-fluid">
+      <div class="mb-npx">
+          <div class="row align-items-center">
+              <!-- Navigation Options -->
+              <div class="col-12 text-center">
+                  <ul class="nav nav-tabs mt-4 overflow-x border-0">
+                      <li class="nav-item"><a href="/post" class="nav-link">Add Bus</a></li>
+                      <li class="nav-item"><a href="/regbuses" class="nav-link">Users</a></li>
+                      <li class="nav-item"><a href="/viewbookings" class="nav-link">Bookings</a></li>
+                       <li class="nav-item"><a href="/refund" class="nav-link">RefundReq</a></li>
+                       <li class="nav-item"><a href="/showfeed" class="nav-link">feedback Info</a></li>
+                      <li class="nav-item"><a href="/Admin" class="nav-link">Logout</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card ticket-details">
+          <div class="card-body">
+            <h2 class="card-title">Ticket Details</h2>
+           <div class="seat-layout-container">
+
+  <div>
+    <ul>
+      <li *ngIf="selectedSeats.firstACSeats > 0">First AC Seats: {{ selectedSeats.firstACSeats }}</li>
+      <li *ngIf="selectedSeats.secondACSeats > 0">Second AC Seats: {{ selectedSeats.secondACSeats }}</li>
+      <li *ngIf="selectedSeats.sleeperSeats > 0">Sleeper Seats: {{ selectedSeats.sleeperSeats }}</li>
+    </ul>
+  </div>
+
+  
+
+  <div>
+    <p>Departure Date: {{ departureDate }}</p>
+    <p>Departure Time: {{ departureTime }}</p>
+    <p>Bus Name: {{ busName }}</p>
+    <p>totalAmount:{{totalAmount}}</p>
+  </div>
+</div>
+
+
+
+<!-- <div class="mt-2">
+  Total Price: {{ totalAmount | currency: 'INR' }}
+</div> -->
+<br>
+            <div class="booking-message">
+              <p> Please do your payment. Thank you for choosing ridetohome.com! your seat number will tell when you check in...</p>
+            </div>
+            
+            <!-- <button class="btn btn-primary">Do Payment</button> -->
+            <div *ngIf="showSuccessMessage" class="success-message">
+              Your transaction is done. Click below to download the ticket.
+              <button (click)="downloadTicket()" class="btn btn-success">Download Ticket</button>
+            </div>
+          </div>
+        </div>
+        <!-- <button (click)="seat()" class="btn btn-success">select seat</button> -->
+      </div>
+      <div class="col-md-6">
+        <div class="card transaction-form">
+          <div class="card-body">
+            <h2 class="card-title">Enter Bank Card Details</h2>
+            <form (ngSubmit)="submitBankAndBookingDetails()" #bankForm="ngForm">
+              <div class="form-group">
+                <label for="bankName" class="form-label">Bank Name:</label>
+                <input type="text" id="bankName" name="bankName" [(ngModel)]="bankName" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="cardNumber" class="form-label">Card Number (Last 4 digits):</label>
+                <input type="text" id="cardNumber" name="cardNumber" [(ngModel)]="cardNumber" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="ExpiryDate" class="form-label">Expiry Date:</label>
+                <input type="date" id="ExpiryDate" name="ExpiryDate" [(ngModel)]="ExpiryDate" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="ybl" class="form-label">ybl:</label>
+                <input type="text" id="ybl" name="ybl" [(ngModel)]="ybl" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div *ngIf="showSuccessMessage" class="success-message">
+              Transaction is successful!
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  
